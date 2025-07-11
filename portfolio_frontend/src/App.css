@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+}
+
+p, label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+section {
+  scroll-margin-top: 80px; /* Ensures smooth scrolling accounts for fixed navbar */
+}
+
+/* Glassmorphism effect for cards */
+.bg-glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Parallax effect for Home section background */
+section#home {
+  position: relative;
+  overflow: hidden;
+}
+
+section#home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  z-index: 0;
+}
+
+/* Border animation */
+@keyframes borderGlow {
+  0% { border-color: rgba(0, 0, 0, 0.5); }
+  50% { border-color: rgba(100, 100, 100, 0.7); }
+  100% { border-color: rgba(0, 0, 0, 0.5); }
+}
+
+.animate-border {
+  animation: borderGlow 2s infinite ease-in-out;
+}
+
+/* Role animation */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(10px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.role-animation {
+  animation: fadeInOut 2s ease-in-out infinite;
+}
